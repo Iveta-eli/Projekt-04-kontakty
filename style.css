@@ -6,6 +6,66 @@ body {
 	font-size: 14px;
 }
 
-h1 {
+
+h1,
+h2,
+p {
 	text-align: center;
 }
+
+.tym{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+}
+
+.foto img{
+	border-radius: 50%;
+}
+
+.osoba{
+	width: 100%;
+	border: 1px solid gray;
+	border-radius:  7px;
+	padding: 20px;
+	display: flex; /* na mobilu pod sebou na table tu a pc jinak*/
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0 3px 3px lightblue;
+	margin-bottom: 20px;
+}
+
+/* tBLET,  MUSÍ SE NAstavit šířka 50%, mezera se odečítá - použije se fce calc; 100% minus 20px, zbytek dáme do calc, vydělíme dvěma*/
+@media (min-width: 540px) and (max-width: 959px) {
+	
+	.tym{
+	flex-direction: row;
+	display: flex;
+	flex-wrap: wrap;
+	}
+	.osoba{
+		width: calc((100% - 20px) / 2);
+		flex-direction: row;
+		margin-bottom: 20px;
+	}
+
+	h2,
+	p{
+		text-align: left;
+		padding-left: 20px ;
+	}
+}
+
+@media (min-width: 960px) {
+	.osoba{  
+		width: calc((100% - 60px) / 4);
+		flex-wrap: wrap;
+		}
+	.tym{
+		flex-direction: row;
+			}
+	}
+	
+
+	
